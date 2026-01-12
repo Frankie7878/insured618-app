@@ -1,0 +1,9 @@
+[build]
+  # 这一长串命令做了三件事：
+  # 1. 下载 Flutter (git clone)
+  # 2. 把 Flutter 加入临时环境变量 (export PATH)
+  # 3. 运行构建命令 (flutter build web --release)
+  command = "git clone https://github.com/flutter/flutter.git -b stable --depth 1 && export PATH=\"$PATH:`pwd`/flutter/bin\" && flutter build web --release"
+  
+  # 告诉 Netlify 构建完成后，网站文件在哪里
+  publish = "build/web"
