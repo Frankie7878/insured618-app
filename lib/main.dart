@@ -128,20 +128,28 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Row(
-          children: [
-            Icon(Icons.shield_outlined, color: AppColors.primaryBlue, size: 28),
-            SizedBox(width: 8),
-            Text(
-              "Insured618",
-              style: GoogleFonts.montserrat( 
-                color: AppColors.primaryBlue, 
-                fontSize: 22, 
-                fontWeight: FontWeight.w900, 
-                letterSpacing: -0.5, 
+        title: GestureDetector(
+          onTap: () async {
+            final Uri url = Uri.parse("https://insurance.frank-zhang.com");
+            if (await canLaunchUrl(url)) {
+              await launchUrl(url, mode: LaunchMode.externalApplication);
+            }
+          },
+          child: Row(
+            children: [
+              Icon(Icons.shield_outlined, color: AppColors.primaryBlue, size: 28),
+              SizedBox(width: 8),
+              Text(
+                "Insured618",
+                style: GoogleFonts.montserrat( 
+                  color: AppColors.primaryBlue, 
+                  fontSize: 22, 
+                  fontWeight: FontWeight.w900, 
+                  letterSpacing: -0.5, 
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         actions: [
           IconButton(
@@ -908,7 +916,7 @@ class ContactPage extends StatelessWidget {
 
             _buildContactCard(context, "微信 (WeChat)", "Insures618", Icons.chat, "复制", isHighlight: true),
             const SizedBox(height: 16),
-            _buildContactCard(context, "电子邮箱", "insured618@gmail.com", Icons.email, "邮件"),
+            _buildContactCard(context, "电子邮箱", "insurance@frank-zhang.com", Icons.email, "邮件"),
 
             const SizedBox(height: 40),
             Text("工作时间: 周一至周五 9:00 - 18:00 (EST)", style: TextStyle(color: Colors.grey.shade400, fontSize: 12)),
