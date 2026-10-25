@@ -914,7 +914,7 @@ class ContactPage extends StatelessWidget {
             
             const SizedBox(height: 32),
 
-            _buildContactCard(context, "微信 (WeChat)", "Insures618", Icons.chat, "复制", isHighlight: true),
+            _buildContactCard(context, "微信 (WeChat)", "insured618", Icons.chat, "复制", isHighlight: true),
             const SizedBox(height: 16),
             _buildContactCard(context, "电子邮箱", "insurance@frank-zhang.com", Icons.email, "邮件"),
 
